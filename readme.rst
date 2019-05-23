@@ -1,70 +1,43 @@
 ###################
-What is CodeIgniter
+Projeto Dodge Showroom
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Analisado a proposta feita, resolvi desenvolver um projeto de Showroom da Dodge. Uma espécie de mostruário de carros onde o "admin" cadastrará os carros aos quais serão exibidos no showroom.
 
 *******************
-Release Information
+Funcionalidades
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+Como me foi pedido um CRUD, o "admin" terá de cadastrar os carros, mas para isso, precisará cadastrar primeiro as categorias dos carros e possíveis cores. Após isso, basta cadastrar um carro e voltar a pagina inicial, e o showroom estará atualizado
 
 **************************
-Changelog and New Features
+Flow de Teste
 **************************
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+Chega de palavras e vamos à ação. 
 
-*******************
-Server Requirements
-*******************
+-  Primeiramente, abra o showroom clicando aqui: `Abrir Showroom <http://dodgeshow-dodgeshow.apps.us-east-2.online-starter.openshift.com>`_
+-  Na tela inicial haverá um carro cadastrado, experimente passar o mouse sobre ele.
+-  Legal né? Agora apagaremos este carro e adicionaremos outro. No canto superior direito à um icone de engrenagem que te levará para a página do "admin".
+-  Nesta página, começaremos navegando pelas possíveis páginas, logo acima da tabela, no canto direito da navbar, há botões que levam às outras abas de configuração, as cores e as categorias, haverá uma em cada uma.
+-  Excluiremos todo o conteúdo existente, no final de cada linha da tabela, há um icone de lixeira, após o clique, será exibida uma mensagem de confirmação, confirme e faça isso nas três tabelas existentes.
+-  Agora se voltarmos a home, uma mensagem será exibida indicando que não há carros a serem exibidos.
+-  Agora cadastraremos outro carro, entre na pagina de admin novamente, e o botão de "+ New Car" te levará ao formulário de inserção.
+-  Mas espera, há avisos dizendo que temos primeiro que cadastrar cores e categorias, volte e acesse a página de cores, experimente adicionar uma cor, "Preto" por exemplo.
+-  Faça o mesmo com uma categoria, "SUV", por exemplo.
+-  Note que não é possível adicionar a mesma categoria ou cor mais de uma vez.
+-  Agora estamos prontos para adicionar um carro à lista, certifique-se de ter uma imagem do carro com dimensões maiores ou iguais a 1024x768.
+-  Acesse a página de inserção, e preencha completamente o formulário, incluindo a imagem do carro no botão "Upload Car Photo".
+-  Caso não seja preenchido completamente, as mensagens de erro indicarão quais os campos que faltam ou não foram preenchidos corretamente.
+-  Após o envio, se correu tudo bem, você poderá visualizar o carro cadastrado no showroom.
+-  Experimente cadastrar mais carros. A visualização do showroom é responsiva, a pagina de "admin" é destinada à web somente.
 
-PHP version 5.6 or newer is recommended.
+**************************
+Considerações finais
+**************************
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+Por não conhecer o framework, surgiram muitas duvidas sobre a boa prática e sobre estruturação de código, mas fiz o meu melhor e espero ter atendido as expectativas, é isso ai...
 
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+###################
+Até mais
+###################

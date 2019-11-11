@@ -1,0 +1,13 @@
+{
+    "name": "Ações de Valor - Randon",
+    "short_name": "Ações de Valor",
+    "start_url": "index.html",
+    "display": "standalone",
+    "icons": [{
+      "src": "assets/img/logo.png",
+      "sizes": "113x99",
+      "type": "image/png"
+    }],
+    "background_color": "#ffffff",
+    "theme_color": "#294d77"
+  }

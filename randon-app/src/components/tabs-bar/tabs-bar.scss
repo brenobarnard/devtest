@@ -1,0 +1,132 @@
+tabs-bar {
+    button {
+        &.home-button {
+            display: block;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            background: none;
+            padding: 0;
+            margin-bottom: -32px;
+            z-index: 10;
+
+            #svg-home {
+                * {
+                    transition: fill 0.3s, stroke 0.3s;
+                }
+                #stroke {
+                    stroke-dasharray: 144%;
+                    stroke-dashoffset: 144%;
+                }
+
+                #background {
+                    fill: color($colors, light);
+                }
+
+                #house {
+                    fill: color($colors, black);
+                    stroke: color($colors, black);
+                }
+            }
+
+            &.active {
+                #svg-home {    
+                    #background {
+                        fill: color($colors, primary);
+                    }
+    
+                    #house {
+                        fill: color($colors, white);
+                        stroke: color($colors, white);
+                    }
+                }
+            }
+
+            .activated {
+                background: none;
+            }
+
+            .button-effect {
+                display: none;
+            }
+
+            .item-inner {
+                padding: 0;
+                border-bottom: none;
+
+                .label {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    ion-toolbar {
+        &.toolbar {
+            padding: 0 !important;
+            min-height: unset !important;
+            width: calc(100% + 4px);
+            margin-left: -2px;
+            margin-top: -35px;
+
+            .toolbar-background {
+                background: none;
+            }
+
+            .toolbar-content {
+                .buttons {
+                    display: flex;
+                    padding: 0 20px;
+                    width: 100%;
+                    border-top-left-radius: 14px;
+                    border-top-right-radius: 14px;
+                    border: 2px solid color($colors, light);
+                    border-bottom: none;
+    
+                    button {
+                        &.item {
+                            padding: 0;
+                            width: calc(100% / 5);
+                            min-height: unset;
+        
+                            .item-inner {
+                                border: none;
+                                padding: 13px 0;
+    
+                                .input-wrapper {
+                                    .label {
+                                        text-align: center;
+                                        margin: 0;
+                                        svg {
+                                            transition: fill 0.3s;
+                                            fill: color($colors, primary);
+                                            stroke: color($colors, primary);
+                                            stroke-width: 0;
+                                            width: 18px;
+                                            height: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                
+                        &.item.active {
+                            .item-inner {
+                                .input-wrapper {
+                                    .label {
+                                        svg {
+                                            fill: color($colors, secondary);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+
+    
+}

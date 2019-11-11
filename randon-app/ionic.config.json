@@ -1,0 +1,7 @@
+{
+  "name": "acoes-de-valor-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

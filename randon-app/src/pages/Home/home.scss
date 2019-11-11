@@ -1,0 +1,110 @@
+page-home {
+    .logo {
+        display: block;
+        width: 90px;
+        height: 65px;
+        background: none;
+        margin: 0 auto;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 9px 0;
+        font-size: 1.7rem;
+        color: color($colors, primary);
+
+        .user-name {
+            font-family: 'rubikbold';
+        }
+    }
+
+    .user-points {
+        border-radius: 100rem;
+        padding: 10px;
+        margin-bottom: 30px;
+        width: 100%;
+        background-color: color($colors, primary);
+        text-align: center;
+        color: color($colors, white);
+
+        .points {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            ezoom-svg {
+                width: 30px;
+                height: 30px;
+                fill: color($colors, secondary);
+            }
+
+            .number {
+                margin-left: 5px;
+                font-size: 3.8rem;
+                font-family: 'rubikbold';
+            }
+        }
+
+        .text {
+            font-family: 'rubiklight';
+            font-size: 1.1rem;
+        }
+    }
+
+    .home-links {
+        display: flex;
+        flex-flow: column;
+        flex-grow: 1;
+
+        .home-link {
+            border: 2px solid color($colors, light);
+            border-radius: 7px;
+            box-shadow: none;
+            height: unset;
+    
+            .button-inner {
+                height: 100%;
+                padding: 30px 20px;
+                display: flex;
+                align-items: center;
+
+                ezoom-svg {
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    &.icon {
+                        fill: color($colors, secondary);
+                        width: 30px;
+                        height: 26px;
+                    }
+
+                    &.arrow {
+                        fill: color($colors, primary);
+                        stroke: color($colors, primary);
+                        stroke-width: 0;
+                        width: 6px;
+                        height: 9px;
+                    }
+                }
+    
+                .text {
+                    text-align: left;
+                    margin: 0 19px;
+                    flex-grow: 1;
+                    .label {
+                        display: block;
+                        font-size: 1.3rem;
+                        font-family: 'rubikregular';
+                        text-transform: none;
+    
+                        &.bold {
+                            font-family: 'rubikbold';
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

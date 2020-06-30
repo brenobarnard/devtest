@@ -57,7 +57,7 @@
   </div>
   <label for="categories">Categories:</label>
   <div class="radios" id="categories">
-  <?php if(count($categories) == 0): ?>
+  <?php if(empty($categories)): ?>
     <div class="error inline">No categories available :(, you need to register a category first...</div>
   <?php endif; ?>
     <?php foreach ($categories as $category) :

@@ -36,45 +36,87 @@ class Admin extends CI_Controller {
     $this->load->view('templates/main_footer', $data);
   }
 
-  public function add_car() {
+  public function add_item() {
 
     // Carregamento de variáveis para autopreenchimento do formulário em caso de reload
-    $data['car'] = array(
-      'id'        =>$this->input->post('car_id') ? $this->input->post('car_id') : '',
-      'model'     =>$this->input->post('model') ? $this->input->post('model') : '',
-      'year'      =>$this->input->post('year') ? $this->input->post('year') : '',
-      'color'     =>$this->input->post('color') ? $this->input->post('color') : '',
-      'category'  =>$this->input->post('category') ? $this->input->post('category') : '',
-    );
+    $post = $this->input->post();
 
-    // Variáveis CORE
-    $data['title'] = 'Add a Car';
-    $data['styles'] = ['main.css', 'templates/forms.css', 'templates/footer.css'];
-    $data['error'] = $this->upload->display_errors() ? $this->upload->display_errors('<span>', '</span>') : '';
+    switch ($post['item']) {
+      case 'color':
+        // Variáveis CORE
+        $data['title'] = 'Add a Color';
+        $data['styles'] = ['main.css', 'templates/forms.css', 'templates/footer.css'];
+        $data['error'] = '';
 
-    // Buscando cores e categorias
-    $data['colors'] = $this->colors_model->get_colors();
-    $data['categories'] = $this->categories_model->get_categories();
+        /* Setando a variável $form_config da 
+          view com isset pra evitar multiplos sets */
+        if (!isset($data['form_config'])) {
+          $configs = array (
+            'title' => 'add new color',
+            'method' => 'admin_colors/send',
+            'submit_text' => 'add color',
+            'back_page' => '/index.php/admin',
+            'input' => array(
+              'id'=>'color_name',
+              'label'=>'Color Name:',
+              'name'=>'color',
+              'placeholder'=>'Color Name',
+              'maxlength'=>'40'
+            ),
+            'attributes' => 'class="form" id="formCrud"',
+          );
 
-    /* Setando a variável $form_config da 
-       view com isset pra evitar multiplos sets */
-    if (!isset($data['form_config'])) {
-      $configs = array (
-        'title' => 'add car to showroom',
-        'method' => 'admin/send',
-        'back_page' => '/index.php/admin',
-        'submit_text' => 'add car',
-        'attributes' => 'class="form" id="formCrud"',
-      );
+          $data['form_config'] = $configs;
+        }    
 
-      $data['form_config'] = $configs;
+        $response = array(
+          'status' => true,
+          'view' => $this->load->view('templates/cc_form', $data, true)
+        );
+
+        break;
+      case 'car':
+        // Variáveis CORE
+        $data['title'] = 'Add a Car';
+        $data['car'] = 0;
+        $data['error'] = $this->upload->display_errors() ? $this->upload->display_errors('<span>', '</span>') : '';
+
+        // Buscando cores e categorias
+        $data['colors'] = $this->colors_model->get_colors();
+        $data['categories'] = $this->categories_model->get_categories();
+
+        /* Setando a variável $form_config da 
+          view com isset pra evitar multiplos sets */
+        if (!isset($data['form_config'])) {
+          $configs = array (
+            'title' => 'add car to showroom',
+            'method' => 'admin/send',
+            'back_page' => '/index.php/admin',
+            'submit_text' => 'add car',
+            'attributes' => 'class="form" id="formCrud"',
+          );
+
+          $data['form_config'] = $configs;
+        }
+
+        $response = array(
+          'status' => true,
+          'view' => $this->load->view('templates/cars_form', $data, true)
+        );
+
+        break;
+      default:
+        $response = array(
+          'status' => false,
+          'view' => NULL
+        );
+
+        break;
     }
-
-    // Carregamento da View
-    $this->load->view('templates/main_header', $data);
-    $this->load->view('templates/cars_form', $data);
-    $this->load->view('templates/footer', $data);
-    $this->load->view('templates/main_footer', $data);
+    
+    $this->output->set_content_type('application/json')
+                 ->set_output(json_encode($response));
+    
   }
 
   public function edit_car($id) {

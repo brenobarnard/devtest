@@ -2,9 +2,9 @@
   <div class="table-title">
     <span>Showroom's Cars</span>
     <div class="button-group">
-      <a class="admin-button secondary" href="/index.php/admin_categories"><i class="icon ion-md-albums"></i> See Categories</a>
-      <a class="admin-button secondary" href="/index.php/admin_colors"><i class="icon ion-md-albums"></i> See Colors</a>
-      <a class="admin-button primary" href="/index.php/admin/add_car"><i class="icon ion-md-add"></i> new Car</a>
+      <a class="admin-button open-modal secondary" data-url="<?php echo site_url('/admin/add_item'); ?>" data-item="category"><i class="icon ion-md-add"></i> add category</a>
+      <a class="admin-button open-modal secondary" data-url="<?php echo site_url('/admin/add_item'); ?>" data-item="color"><i class="icon ion-md-add"></i> add color</a>
+      <a class="admin-button open-modal primary" data-url="<?php echo site_url('/admin/add_item'); ?>" data-item="car"><i class="icon ion-md-add"></i> new Car</a>
     </div>
   </div>
   <div class="cards-container">
@@ -24,5 +24,11 @@
         </span>
       </div>
     <?php endforeach; ?>
+  </div>
+</div>
+
+<div class="modal" id="modal_container">
+  <div class="backdrop"></div>
+  <div class="modal-body">
   </div>
 </div>

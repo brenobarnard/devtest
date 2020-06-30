@@ -1,4 +1,4 @@
-<a class="icon ion-md-settings navigation-icon absolute" href="/index.php/admin"></a>
+<a class="icon ion-md-settings navigation-icon absolute" href="<?php echo site_url('/admin'); ?>"></a>
 <div class="title">
   <span><?php echo $title; ?></span>
 </div>

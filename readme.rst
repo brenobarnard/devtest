@@ -15,7 +15,8 @@ Flow de Teste
 **************************
 
 Chega de palavras e vamos à ação. 
--  Na tela inicial haverá um carro cadastrado, experimente passar o mouse sobre ele.  
+
+-  Na tela inicial haverá um carro cadastrado, experimente passar o mouse sobre ele.
 -  Legal né? Agora apagaremos este carro e adicionaremos outro. No canto superior direito à um icone de engrenagem que te levará para a página do "admin".  
 -  Nesta página, começaremos navegando pelas possíveis páginas, logo acima da tabela, no canto direito da navbar, há botões que levam às outras abas de configuração, as cores e as categorias, haverá uma em cada uma.  
 -  Excluiremos todo o conteúdo existente, no final de cada linha da tabela, há um icone de lixeira, após o clique, será exibida uma mensagem de confirmação, confirme e faça isso nas três tabelas existentes.  
